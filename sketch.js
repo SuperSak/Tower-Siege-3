@@ -4,6 +4,7 @@ const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint
 var ground, polygon, polygonImage, sling;
 var b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16;
+var score=0;
 function preload(){
     polygonImage=loadImage("polygon.png")
 
@@ -42,23 +43,40 @@ function setup(){
 }
 function draw(){
     background(200)
+    text("Score: "+score,25,25)
     ground.display()
-    b1.display()
-    b2.display()
-    b3.display()
-    b4.display()
-    b5.display()
-    b6.display()
-    b7.display()
-    b8.display()
-    b9.display()
-    b10.display()
-    b11.display()
-    b12.display()
-    b13.display()
-    b14.display()
-    b15.display()
-    b16.display()
+    b1.disapear()
+    b2.disapear()
+    b3.disapear()
+    b4.disapear()
+    b5.disapear()
+    b6.disapear()
+    b7.disapear()
+    b8.disapear()
+    b9.disapear()
+    b10.disapear()
+    b11.disapear()
+    b12.disapear()
+    b13.disapear()
+    b14.disapear()
+    b15.disapear()
+    b16.disapear()
+    b1.score()
+    b2.score()
+    b3.score()
+    b4.score()
+    b5.score()
+    b6.score()
+    b7.score()
+    b8.score()
+    b9.score()
+    b10.score()
+    b11.score()
+    b12.score()
+    b13.score()
+    b14.score()
+    b15.score()
+    b16.score()
     sling.display()
     imageMode(CENTER)
     image(polygonImage, polygon.position.x, polygon.position.y,50,50)
@@ -69,4 +87,9 @@ function mouseDragged(){
 }
 function mouseReleased(){
     sling.fly()
+}
+function keyPressed(){
+    if(keyCode===32){
+        sling.attach(polygon)
+    }
 }
